@@ -22,6 +22,7 @@ function App() {
     
       setFrase(frases[fraseAleatoria])
     
+      
   }
 
   function reniciar() {

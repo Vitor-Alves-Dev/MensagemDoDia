@@ -30,16 +30,14 @@ function App() {
   }
 return(
  <View style={styles.container}>
-     <Text style={styles.titulo}>MENSAGEM DO DIA!</Text>
+     <Text style={styles.titulo }>MENSAGEM DO DIA!</Text>
        <Image source={img}
        style={styles.img}/>
        <Text style={styles.fraseBiscoito}>{frase}</Text>
-       <Pressable style={styles.botao} onPress={ quebrar }>
-        <Text style={styles.texto}>Abrir Carta</Text>
+       <Pressable style = {({ pressed }) => [ styles.botao, pressed && styles.botaoPressionado]} onPress={ quebrar }>
+        <Text style={styles.texto}>Nova Mensagem</Text>
        </Pressable>
-       <Pressable style={styles.botao2} onPress={ reniciar }>
-        <Text style={styles.texto2}>Fechar Carta</Text>
-       </Pressable>
+       
        
  </View>
 
@@ -53,6 +51,10 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#191970'
     },
+     botaoPressionado: {
+    transform: [{ scale: 0.95 }],
+    opacity: 0.8,
+  },
     titulo: {
     fontSize: 30,
     fontStyle: 'italic',
@@ -70,6 +72,7 @@ const styles = StyleSheet.create({
        borderWidth: 2,
        borderColor: '#4169E1',
        backgroundColor: 'white', 
+       marginBottom: 60
     },
     texto: {
       alignItems: 'center',
@@ -98,12 +101,14 @@ const styles = StyleSheet.create({
       fontSize: 18,
       fontWeight: 'bold'
     },
+    
     fraseBiscoito: {
-      fontSize: 20,
+      fontSize: 25,
       color: 'white',
       marginBottom: 60,
       fontStyle: 'italic',
-      textAlign: 'center'
+      textAlign: 'center',
+      fontWeight: 'bold'
     }
 })
 export default App

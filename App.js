@@ -56,10 +56,11 @@ const styles = StyleSheet.create({
     titulo: {
     fontSize: 30,
     fontStyle: 'italic',
-    color: 'white'
+    color: 'white',
+    fontWeight: 'bold'
       },
     img: {
-      width: 300,
+      width: '80%',
       height: 300
     },
     botao: {

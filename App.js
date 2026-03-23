@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image, Pressable} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 
@@ -8,7 +9,7 @@ function App() {
   const[frase, setFrase] = useState('')
 
   function quebrar() {
-    setImg(require('./src/cartaAberta.png'))
+    setImg(require('./src/cartaAberta2.png'))
     let frases = [
       '"Hoje será um grande dia!"',
       '"Amanhã Voce terá uma grande surpresa!"',
@@ -30,6 +31,11 @@ function App() {
     setFrase('')
   }
 return(
+
+  <LinearGradient
+      colors={['#100761', '#2e0c9e', '#1d20e4']}
+      style={{ flex: 1 }}
+    >
  <View style={styles.container}>
      <Text style={styles.titulo }>MENSAGEM DO DIA!</Text>
        <Image source={img}
@@ -41,7 +47,7 @@ return(
        
        
  </View>
-
+</LinearGradient>
 )
 }
 
@@ -50,7 +56,7 @@ const styles = StyleSheet.create({
       flex:1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#191970'
+      
     },
      botaoPressionado: {
     transform: [{ scale: 0.95 }],
@@ -62,10 +68,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold'
       },
-    img: {
-      width: '80%',
-      height: 300
-    },
+    
     botao: {
       width: 230,
       height: 50,
